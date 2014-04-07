@@ -1,14 +1,20 @@
 #BlueJ class context
 comment0.params=colour\ g
 comment0.target=void\ init(int,\ interfaces.Game)
+comment0.text=\n\ initalisize\ the\ player\n
 comment1.params=
 comment1.target=void\ activate()
+comment1.text=\n\ activate\ Player\ and\ ask\ for\ throwing\ in\n
 comment2.params=xPos\ yPos
 comment2.target=void\ printField(int,\ int)
+comment2.text=\n\ print\ the\ field\ to\ screen\n
 comment3.params=winner
 comment3.target=void\ endGame(int)
+comment3.text=\n\ End\ the\ game\n
 comment4.params=
 comment4.target=java.lang.String\ getMyName()
+comment4.text=\n\ Return\ Players\ name\n
 comment5.params=nbr
 comment5.target=void\ setNumber(int)
+comment5.text=\n\ Set\ Playernumber\n
 numComments=6

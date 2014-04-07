@@ -31,9 +31,9 @@ public class Libgame{
     }
     private static int wagerechtueberpruefung()//ueberprueft , ob ein spieler auf einer wagerechten Ebene gewonnen hat
     {
-       for(int i=5;i>=0;i--)
+       for(int i=6;i>=0;i--)
        {
-           for(int j=0;j<=3;j++)
+           for(int j=0;j<=2;j++)
            {
             if (spielfeld[j][i]==1 &&
                 spielfeld[(j+1)][i]==1 &&

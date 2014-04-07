@@ -7,11 +7,11 @@ import java.io.*;
  */
  public class Curses
 {
-     private static char screen[][];
-     private static int xSize;
-     private static int ySize;
-     private static int xPos;
-     private static int yPos;
+     private static char screen[][]; // das Array, indem der Bildschirminhalt gespeichert wird
+     private static int xSize;       // x-Groesse des Bildschirminhaltes in Zeichen
+     private static int ySize;       // y-Groesse des Bildschirminhaltes in Zeichen
+     private static int xPos;        // x-Position auf dem Bildschirm
+     private static int yPos;        // y-Position auf dem Bildschirm
      
     /**
      * Initialises the screen.
@@ -19,11 +19,11 @@ import java.io.*;
      public static void initscr(int y, int x){
         xSize = x;
         ySize = y;
-        screen=new char[ySize][xSize];
+        screen=new char[ySize][xSize]; // Dimensionieren des Arrays
         yPos = 0;
         xPos = 0;
         for (int i = 0; i < ySize; i++){
-            for(int j = 0; j < xSize; j++)screen[i][j]= ' ';
+            for(int j = 0; j < xSize; j++)screen[i][j]= ' '; // Überschreiben aller daten im Array mit ' '
         }
     }
     
@@ -31,21 +31,23 @@ import java.io.*;
      * Returns the horizontal size.
      */
     public static int getXSize(){
-        return xSize;
+        return xSize; //gibt die horizontale Groesse in Zeichen zurück
     }
     
     /**
      * Returns the vertical size.
      */
     public static int getYSize(){
-        return ySize;
+        return ySize; //gibt die vertikale Groesse in Zeichen zurück
     }
     
     /**
      * Prints modified screen on console. 
      */
      public static void refresh(){
-        System.out.println("\u000c");
+        System.out.println("\u000c"); // Terminal löschen
+        
+        //Ausgeben des Arrays Zeichen für Zeichen
         for (int i = 0; i < ySize; i++){
             for(int j = 0; j < xSize; j++)System.out.print(screen[i][j]);
             System.out.println("");
@@ -57,12 +59,12 @@ import java.io.*;
      */
      public static void addstr(String string){
         for (int i = 0; i < string.length(); i++){
-            if(xPos < xSize){   
+            if(xPos < xSize){ //falls man nicht am vertikalen bwz. horizontalen Ende des Arrays ist
                 xPos++;
-            }else if (xPos >= xSize){
+            }else if (xPos >= xSize){ //falls man nicht am vertikalen aber am horizontalen Ende ist
                 yPos++;
                 xPos = 0;
-            }else{
+            }else{ //falls man am vertikalen bwz. horizontalen Ende des Arrays ist
                 yPos = 0;
                 xPos = 0;
             }
@@ -74,8 +76,8 @@ import java.io.*;
      * Moves to specific position.
      */
      public static void move(int x, int y){
-        xPos = x;
-        yPos = y;
+        xPos = x; // X-Position setzen
+        yPos = y; // Y-Position setzen
     }
     
     /**
